@@ -7,9 +7,8 @@ A collection of styled buttons designed using pure CSS.
 - [Demo](#demo)
 - [Features](#features)
 - [How to Use](#how-to-use)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+
+
 
 ## Description
 
