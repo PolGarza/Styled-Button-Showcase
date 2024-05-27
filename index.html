@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="STYLES/scenes.css">
+  <link rel="shortcut icon" href="STYLES/IMAGES/LOGO.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+  <title>Michiventures</title>
+</head>
+
+<body>
+
+    <!-- Hidden click sound -->
+    <audio id="clickSound">
+        <source src="STYLES/AUDIO/ENTER.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="Recommendations">
+  
+        <div class="container">
+            <div class="gallery">
+                <!-- Here you can display the username if authenticated -->
+
+                <div class="image-port" data-url="FIRST_LEVEL_1.php">
+                    <img src="STYLES/IMAGES/CARROT.png" alt="" class="image-about-us">
+                    <div class="hover-gallery">
+                        <img src="STYLES/IMAGES/CAT.png" alt="" class="image-about-us">
+                        <a href="">NORMAL</a>
+                    </div>
+                </div>
+
+                <div class="image-port" data-url="SPECIAL_LEVEL_1.php">
+                    <img src="STYLES/IMAGES/HALLOWEEN.png" alt="" class="image-about-us">
+                    <div class="hover-gallery">
+                        <img src="STYLES/IMAGES/CAT.png" alt="" class="image-about-us">
+                        <a href="">HALLOWEEN</a>
+                    </div>
+                </div>
+
+                <div class="image-port" data-url="SPECIAL_LEVEL_2.php">
+                    <img src="STYLES/IMAGES/GROGU.png" alt="" class="image-about-us">
+                    <div class="hover-gallery">
+                        <img src="STYLES/IMAGES/CAT.png" alt="" class="image-about-us">
+                        <a href="">STAR WARS</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var clickSound = document.getElementById('clickSound');
+            var imagePorts = document.querySelectorAll('.image-port');
+
+            imagePorts.forEach(function(port) {
+                port.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent immediate redirection
+                    var url = port.getAttribute('data-url');
+                    clickSound.play();
+
+                    clickSound.onended = function() {
+                        window.location.href = url;
+                    };
+                });
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
